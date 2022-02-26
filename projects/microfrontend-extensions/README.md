@@ -1,5 +1,5 @@
 # Micro-Frontend Extensions
-Just-in-time renderer for dynamic Angular components loaded bundled with [Module Federation](https://webpack.js.org/concepts/module-federation/).
+Just-in-time renderer for dynamic Angular components bundled with [Module Federation](https://webpack.js.org/concepts/module-federation/).
 
 ## Prerequisites
 

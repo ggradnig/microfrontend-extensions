@@ -1,16 +1,14 @@
 # Micro-Frontend Extensions
-Just-in-time renderer for dynamic Angular components loaded bundled with [Module Federation](https://webpack.js.org/concepts/module-federation/).
+Just-in-time renderer for dynamic Angular components bundled with [Module Federation](https://webpack.js.org/concepts/module-federation/).
 
 ## Prerequisites
 
 The package requires the following peer dependencies:
 
 ```json
-{
-  "@angular/common": "^12.0.0",
-  "@angular/core": "^12.0.0",
-  "@angular-architects/module-federation": "^14.1.0"
-}
+    "@angular/common": "^12.0.0",
+"@angular/core": "^12.0.0",
+"@angular-architects/module-federation": "^14.1.0"
 ```
 
 ## Usage
