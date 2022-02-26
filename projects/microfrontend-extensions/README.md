@@ -1,24 +1,25 @@
-# MicrofrontendExtensions
+# Micro-Frontend Extensions
+Just-in-time renderer for dynamic Angular components loaded bundled with [Module Federation](https://webpack.js.org/concepts/module-federation/).
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+## Usage
 
-## Code scaffolding
+Initialize your dynamic configuration:
 
-Run `ng generate component component-name --project microfrontend-extensions` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project microfrontend-extensions`.
-> Note: Don't forget to add `--project microfrontend-extensions` or else it will be added to the default project in your `angular.json` file. 
+```ts
+const config: RemoteOutletConfig = {
+  remoteEntry: "https://cdn.yourhost.com/remoteEntry.js",
+  remoteName: "example_remote",
+  module: "ExampleModule",
+  component: "ExampleComponent",
+}
+```
 
-## Build
+Where
+* `remoteEntry` is the URL to the main bundle from your Micro-Frontend
+* `remoteName` is the name you've set as `output.uniqueName` in your Webpack Config
+* `module` is the name of the NgModule that declares the necessary providers and imports of your component
+* `component` is the name of the Component you want to render
 
-Run `ng build microfrontend-extensions` to build the project. The build artifacts will be stored in the `dist/` directory.
+Then, add this component to the Angular-Template where you want to render your dynamic Micro-Frontends:
 
-## Publishing
-
-After building your library with `ng build microfrontend-extensions`, go to the dist folder `cd dist/microfrontend-extensions` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test microfrontend-extensions` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`<remote-outlet [config]="config"></remote-outlet>`
