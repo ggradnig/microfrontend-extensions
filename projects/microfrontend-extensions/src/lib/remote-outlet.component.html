@@ -1,5 +1,5 @@
 <ng-container *ngFor="let module of config; trackBy: trackByName">
-  <ng-container
-    *remoteComponentRenderer="module"
-  ></ng-container>
+  <div [style.min-height.px]="module.placeholder?.minHeight">
+    <ng-container *remoteComponentRenderer="module"></ng-container>
+  </div>
 </ng-container>

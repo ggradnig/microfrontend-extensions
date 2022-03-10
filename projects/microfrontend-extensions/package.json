@@ -1,6 +1,6 @@
 {
   "name": "microfrontend-extensions",
-  "version": "1.0.15",
+  "version": "1.0.22",
   "peerDependencies": {
     "@angular/common": "^12.0.0",
     "@angular/core": "^12.0.0",

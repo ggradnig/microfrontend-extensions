@@ -23,14 +23,18 @@ const config: RemoteOutletConfig = {
   remoteName: "example_remote",
   module: "ExampleModule",
   component: "ExampleComponent",
+  placeholder: {
+    minHeight: 220
+  }
 }
 ```
 
 Where
-* `remoteEntry` is the URL to the main bundle from your Micro-Frontend
-* `remoteName` is the name you've set as `output.uniqueName` in your Webpack Config
-* `module` is the name of the NgModule that declares the necessary providers and imports of your component
-* `component` is the name of the Component you want to render
+* `remoteEntry`: URL to the main bundle from your Micro-Frontend
+* `remoteName`: name you've set as `output.uniqueName` in your Webpack Config
+* `module`: name of the NgModule that declares the providers and imports of your component
+* `component`: name of the Component you want to render
+* `placeholder`: dimensions of the placeholder-container shown during loading
 
 Then, add this component to the Angular-Template where you want to render your dynamic Micro-Frontends:
 
