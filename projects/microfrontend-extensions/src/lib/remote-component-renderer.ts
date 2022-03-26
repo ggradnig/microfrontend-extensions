@@ -22,7 +22,14 @@ export class RemoteComponentRenderer implements OnInit {
   }
 
   private async renderComponent() {
-    const module = await loadRemoteModule({...this.remoteComponentRenderer, type: 'module', exposedModule: './Module'})
+    let module;
+    try {
+      module = await loadRemoteModule({...this.remoteComponentRenderer, type: 'module', exposedModule: './Module'})
+    } catch(e) {
+      console.error(e);
+      return;
+    }
+
     const factory = await this.compiler.compileModuleAsync(module[this.remoteComponentRenderer.module]);
     const moduleRef = factory.create(this.injector);
 
